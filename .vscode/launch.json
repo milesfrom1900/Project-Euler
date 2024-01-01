@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Admin/Documents/GitHub/Project-Euler/P3",
-      "program": "c:/Users/Admin/Documents/GitHub/Project-Euler/P3/build/Debug/outDebug",
+      "cwd": "c:/Users/Admin/Documents/GitHub/Project-Euler/P800",
+      "program": "c:/Users/Admin/Documents/GitHub/Project-Euler/P800/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
