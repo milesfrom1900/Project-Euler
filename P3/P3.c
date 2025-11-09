@@ -1,16 +1,19 @@
 #include <stdio.h>
+#include <math.h>
 
 long long int GetGreatestPrime(long long int n){
     long long int p=0;
 
-    for (p = 2; p <= n; p++){
+    while (n%2==0)  //Optimization, divide even numbers first
+        n /= 2;
+
+    for (p = 3; p*p <= n; p+=2){ //p*p since min possible p = sqrt(n)
         while (n % p == 0){
             printf("%lli ",p);
-                if (n == p)
-                    return n;
-                n=n/p;
+            n/=p;    
         }
     } 
+    return n;
 }
 
 int main(){
