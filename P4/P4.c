@@ -20,12 +20,16 @@ int GetLargestPalindromeFromProduct(int digits){
     //Returs the largest palindrome from the produi maxPct of two numbers
     int maxProduct = 0;
     int maxSum = 0;
+
+    int iterations = 0;
+
     maxProduct = (int)pow(10,digits) -1;
 
     for (int  i = maxProduct; i > 0; i--)
     {
-        for (int  j = (int)maxProduct; j > 0; j--)
+        for (int  j = (int)maxProduct; j*i > 0; j--)
         {
+            iterations++;
             if (IsPalindrome(i*j) == true)
             {
                 if (i*j > maxSum){maxSum = i*j; printf("%i\n",maxSum);} 
@@ -33,6 +37,7 @@ int GetLargestPalindromeFromProduct(int digits){
             }
         }
     }
+    printf("Iterations: %i\n",iterations);
     return maxSum;
 }
 
