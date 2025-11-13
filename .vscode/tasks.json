@@ -10,7 +10,8 @@
                 "-g",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
-                "-lm"                  // link math library
+                "-lm",                  // link math library
+                "../common/utils.c"
             ],
             "problemMatcher": [
                 "$gcc"
@@ -26,7 +27,8 @@
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
-                "-lm"                  // link math library
+                "-lm",                  // link math library
+                "../common/utils.c"
             ],
             "options": {
                 "cwd": "${fileDirname}"
