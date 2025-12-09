@@ -8,5 +8,6 @@ typedef unsigned long long llu;
 
 llu gcd(llu a, llu b);
 llu lcm(llu a, llu b);
+bool isPrime(llu n);
 
 #endif
