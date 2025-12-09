@@ -12,7 +12,7 @@ llu GetNthPrime(int n){
 
         if (isPrime(number))
         {
-            primeCounter +=1;
+            primeCounter +=2;
         }
     }
     return number;
