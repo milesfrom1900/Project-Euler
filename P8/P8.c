@@ -1,18 +1,33 @@
 #include <stdio.h>
-#include <stdbool.h>
-#include <math.h>
 #include <string.h>
 #include "../common/utils.h"
 
 llu GetMaxSumAdjesent(int digits[],int numDigits,int nAdjecent){
-    llu maxValue=0;
-    llu value = 0;
-    for (int i = 0; i <= numDigits-nAdjecent; i++)
-    {
-       value = digits[i];
-        for (int j = 1; j < nAdjecent; j++)
-       {value = value * (digits[i+j]);}
-       if (value > maxValue){maxValue = value;}
+    //Window search by first building the window
+    //Check if last value in window is 0, then shift by window size and reset window size
+    //Once window size is reached, shift window and divide by first and multiply by last value
+    
+    llu maxValue=0; 
+    llu value=1;
+    int windowsStart=0;
+    int windowSize=1;
+    
+    while (windowsStart + windowSize <= numDigits){
+        if (digits[windowsStart+windowSize-1]==0){  //0 resets window search
+            windowsStart=windowsStart+windowSize;
+            windowSize=1;
+            value=1;
+        }
+        else if (windowSize <= nAdjecent){   //Window not maximized, build window
+            value=value*digits[windowsStart+windowSize-1];
+            windowSize++;
+        }
+        else {//Multiply and divide
+            value = value * digits[windowsStart+windowSize-1] /digits[windowsStart]; 
+            windowsStart++;
+        }
+        
+        if (value > maxValue){maxValue = value;}
     }
     return maxValue;
 }
