@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "utils.h"
+#include <math.h>
 
 typedef long long lli;
 typedef unsigned long long llu;
@@ -26,4 +27,10 @@ bool isPrime(llu n) {
     }
 
     return true;
+}
+
+bool isPerfectSquare(int value) {
+    if (value < 1) return false;
+    double root = sqrt((double)value);
+    return root == (int)root;
 }
